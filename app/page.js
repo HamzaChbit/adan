@@ -7,7 +7,10 @@ import Footer from '@/components/Footer'
 
 
 
+
 export default function Home() {
+
+  
   return (
     <div className='w-full h-screen  overflow-x-hidden overflow-y-scroll  scrollbar scrollbar-track-white scrollbar-thumb-black cursor-pointer ' >
     <NavBar/>
@@ -15,6 +18,10 @@ export default function Home() {
           <Hero/> 
           
     </div>
+
+
+
+
  <Footer/> 
 
     </div>

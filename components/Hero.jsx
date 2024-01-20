@@ -59,7 +59,7 @@ const Hero = () => {
   const fetchAdhan = async () => {
     try {
       if (selected && selected.name) {
-        const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?country=MA&city=${selected.name}`);
+        const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?country=${geoInfo.country}&city=${selected.name}`);
         const data = await response.json();
         setIpAdhan(data);
       } else {

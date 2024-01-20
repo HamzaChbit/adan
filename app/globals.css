@@ -12,3 +12,23 @@ html{
 
 
 
+
+
+
+.arrow-container {
+  position: relative;
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--direction));
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent; /* Adjust as needed */
+  border-right: 20px solid transparent; /* Adjust as needed */
+  border-bottom: 60px solid #000; /* Adjust as needed */
+}
