@@ -5,6 +5,6 @@ export default function robots() {
         allow: '/',
         
       },
-      sitemap: 'https://acme.com/sitemap.xml',
+      sitemap: 'https://adan-ma.vercel.app/sitemap.xml',
     }
   }

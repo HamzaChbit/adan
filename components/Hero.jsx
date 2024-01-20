@@ -7,6 +7,7 @@ import SearchManufacturer from './SearchManufacturer.jsx';
 import 'moment/locale/ar-ma';
 moment.locale("ar-ma");
 
+
 const Hero = () => {
   const [ipAddress, setIpAddress] = useState('');
   const [ipAdhan, setIpAdhan] = useState('');
