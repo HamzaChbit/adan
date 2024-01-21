@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import moment from "moment";
 import Cart from './Cart';
 import SearchManufacturer from './SearchManufacturer.jsx';
-
+import { motion } from 'framer-motion'
 import 'moment/locale/ar-ma';
 moment.locale("ar-ma");
 
@@ -169,16 +169,16 @@ setInterval(updateTime,1000)
   
  
   return (
-    <div className='w-auto   '>
-        <div  className='  w-full flex flex-row py-5  items-center justify-center ' >
+    <div className='w-auto  h-full lg:h-screen  '>
+        <motion.div     initial={{y:10,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:0.3,delay:0.4}} className='  w-full flex flex-row py-5  items-center justify-center ' >
 
 <SearchManufacturer selected={selected} setSelected={setSelected} />
 
-</div>
+</motion.div>
 
 
       <header className=" ">
-  <div className="mx-auto  w-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+  <motion.div       initial={{y:10,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:0.3,delay:0.4}}  className="mx-auto  w-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
     <div className="sm:flex sm:items-center sm:justify-between">
       <div className="text-center sm:text-start">
       <h1 className="text-xl text-white sm:text-3xl">
@@ -203,7 +203,7 @@ setInterval(updateTime,1000)
 
     
     </div>
-  </div>
+  </motion.div>
 
 
 
@@ -213,7 +213,7 @@ setInterval(updateTime,1000)
 
 </header>
 
-     <div className="grid grid-cols-1   gap-4  mx-5  lg:grid-cols-5 lg:gap-8  my-12  px-15">
+     <motion.div       initial={{y:10,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:0.7,delay:0.8}} className="grid grid-cols-1   gap-4  mx-5  lg:grid-cols-5 lg:gap-8  my-12  px-15">
    <Cart image="/image/fajr.png" 
     name=' صلاة الفجر ' 
      time={ ipAdhan.data?.timings?.Fajr} />
@@ -236,7 +236,7 @@ setInterval(updateTime,1000)
    <Cart image="/image/isha.jpg" 
     name=' صلاة العشاء'  
      time={ ipAdhan.data?.timings?.Isha}  />
-</div>
+</motion.div>
 
 
 

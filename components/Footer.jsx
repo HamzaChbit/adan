@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import React from 'react'
 import { FaLinkedin } from "react-icons/fa6";
+import { motion } from 'framer-motion'
 const Footer = () => {
   return (
  
 
-<footer className="bg-white shadow-navbarShadow">
+<footer        className="bg-white shadow-navbarShadow">
   <div className="mx-auto w-full px-4 py-1 sm:px-6 lg:px-8">
     
      
