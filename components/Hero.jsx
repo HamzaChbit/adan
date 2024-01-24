@@ -13,7 +13,11 @@ const Hero = () => {
   const [ipAdhan, setIpAdhan] = useState('');
   const [geoInfo, setGeoInfo] = useState({});
   const [today, setToday] = useState("");
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState(() => {
+    // Load previously selected value from localStorage
+    const storedValue = localStorage.getItem('selected');
+    return storedValue ? JSON.parse(storedValue) : null;
+  });
   const [nextPrayerIndex, setNextPrayerIndex] = useState(2);
   const [remainingTime, setRemainingTime] = useState("");
   useEffect(() => {
@@ -151,7 +155,12 @@ const Hero = () => {
 
 
   
-
+  useEffect(() => {
+    if (selected) {
+      // Save selected value to localStorage
+      localStorage.setItem('selected', JSON.stringify(selected));
+    }
+  }, [selected]);
 
 
 
@@ -188,7 +197,7 @@ setInterval(updateTime,1000)
  
 
        
-        <h1 className="mt-1.5 md:text-3xl text-xl  font-bold text-white">  {selected.name || geoInfo.city }  </h1>
+        <h1 className="mt-1.5 md:text-3xl text-xl  font-bold text-white">  {selected?.name || geoInfo.city }  </h1>
       </div>
 
       <div className="text-center sm:text-start">
