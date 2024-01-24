@@ -13,13 +13,19 @@ const Hero = () => {
   const [ipAdhan, setIpAdhan] = useState('');
   const [geoInfo, setGeoInfo] = useState({});
   const [today, setToday] = useState("");
-  const [selected, setSelected] = useState(() => {
-    // Load previously selected value from localStorage
-    const storedValue = localStorage.getItem('selected');
-    return storedValue ? JSON.parse(storedValue) : null;
-  });
+  const [selected, setSelected] = useState(null);
   const [nextPrayerIndex, setNextPrayerIndex] = useState(2);
   const [remainingTime, setRemainingTime] = useState("");
+
+  useEffect(() => {
+    const storedValue = localStorage.getItem('selected');
+    if (storedValue) {
+      setSelected(JSON.parse(storedValue));
+    }
+  }, []);
+
+
+
   useEffect(() => {
     const getVisitorIP = async () => {
       try {
@@ -84,7 +90,7 @@ const Hero = () => {
 
   useEffect(() => {
 		let interval = setInterval(() => {
-			console.log("calling timer");
+	
 			setupCountdownTimer();
 		}, 1000);
 
@@ -157,7 +163,6 @@ const Hero = () => {
   
   useEffect(() => {
     if (selected) {
-      // Save selected value to localStorage
       localStorage.setItem('selected', JSON.stringify(selected));
     }
   }, [selected]);
