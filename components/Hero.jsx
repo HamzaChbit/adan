@@ -17,12 +17,7 @@ const Hero = () => {
   const [nextPrayerIndex, setNextPrayerIndex] = useState(2);
   const [remainingTime, setRemainingTime] = useState("");
 
-  useEffect(() => {
-    const storedValue = localStorage.getItem('selected');
-    if (storedValue) {
-      setSelected(JSON.parse(storedValue));
-    }
-  }, []);
+  
 
 
 
@@ -158,14 +153,6 @@ const Hero = () => {
 		);
   
   }
-
-
-  
-  useEffect(() => {
-    if (selected) {
-      localStorage.setItem('selected', JSON.stringify(selected));
-    }
-  }, [selected]);
 
 
 
