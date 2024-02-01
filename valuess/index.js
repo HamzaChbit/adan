@@ -1963,6 +1963,11 @@ export const people = [
       "id": "392",
       "ville": "Zinat",
       "region": "1"
+  },
+  {
+      "id": "393",
+      "ville": "Dakhla",
+      "region": "1"
   }
 ]
 
