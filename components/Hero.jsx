@@ -18,7 +18,12 @@ const Hero = () => {
   const [remainingTime, setRemainingTime] = useState("");
 
   
-
+  useEffect(() => {
+    const storedValue = localStorage.getItem('selected');
+    if (storedValue) {
+      setSelected(JSON.parse(storedValue));
+    }
+  }, []);
 
 
   useEffect(() => {
@@ -165,7 +170,11 @@ const updateTime = () => {
 
 setInterval(updateTime,1000)
  
-  
+useEffect(() => {
+  if (selected) {
+    localStorage.setItem('selected', JSON.stringify(selected));
+  }
+}, [selected]);
 
   
  
@@ -189,7 +198,7 @@ setInterval(updateTime,1000)
  
 
        
-        <h1 className="mt-1.5 md:text-3xl text-xl  font-bold text-white">  {selected?.name || geoInfo.city }  </h1>
+        <h1 className="mt-1.5 md:text-3xl text-xl  font-bold text-white">  {selected?.name || geoInfo.city  }  </h1>
       </div>
 
       <div className="text-center sm:text-start">
