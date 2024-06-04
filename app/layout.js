@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en"  >
-    
+       <meta name="robots" content="أوقات الصلاة ،المغرب، جداول الصلوات، صلاة الفجر،صلاة الظهر،صلاة العصر،صلاة المغرب،صلاة العشاء،مواقيت الصلاة،موقع أذان،توقيت صلاة الفجر،توقيت صلاة الظهر ،توقيت صلاة العصر،توقيت صلاة المغرب،توقيت صلاة العشاء" />
       <body className={inter.className && "bg-black "} >
         {children}
       
